@@ -12,6 +12,7 @@ const CountdownTimer = () => {
       hours: Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
       minutes: Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60)),
       seconds: Math.floor((timeLeft % (1000 * 60)) / 1000),
+      isOver: timeLeft <= 0 
     };
   };
 
@@ -19,7 +20,11 @@ const CountdownTimer = () => {
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setTimeLeft(calculateTimeLeft());
+      const updatedTime = calculateTimeLeft();
+      setTimeLeft(updatedTime);
+      if (updatedTime.isOver) {
+        clearInterval(timer);
+      }
     }, 1000);
 
     return () => clearInterval(timer);
@@ -38,16 +43,38 @@ const CountdownTimer = () => {
         transition={{ duration: 1 }}
         className="text-4xl font-bold mb-4"
       >
-        Countdown to Your Special Day!
+        {timeLeft.isOver ? "Happy Birthday to You!" : "Countdown to Your Special Day!"}
       </motion.h2>
       <div className="text-2xl mb-4">
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 0.2 }}
-        >
-          {timeLeft.days} Days {timeLeft.hours} Hours {timeLeft.minutes} Minutes {timeLeft.seconds} Seconds
-        </motion.div>
+        {!timeLeft.isOver && (
+          <>
+            <motion.h1
+              initial={{ scale: 0.8 }}
+              animate={{ scale: 1 }}
+              transition={{ duration: 1, type: 'spring', stiffness: 100 }}
+              className="text-6xl font-extrabold mb-4"
+            >
+              Something is Coming....
+            </motion.h1>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1, delay: 0.2 }}
+            >
+              {timeLeft.days} Days {timeLeft.hours} Hours {timeLeft.minutes} Minutes {timeLeft.seconds} Seconds
+            </motion.div>
+          </>
+        )}
+        {timeLeft.isOver && (
+          <motion.h1
+            initial={{ scale: 0.8 }}
+            animate={{ scale: 1 }}
+            transition={{ duration: 1, type: 'spring', stiffness: 100 }}
+            className="text-6xl font-extrabold mb-4"
+          >
+            Your Special Day is Here!
+          </motion.h1>
+        )}
       </div>
     </motion.div>
   );
