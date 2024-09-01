@@ -5,10 +5,10 @@ import Image2 from '../assets/Anu1.jpg';
 import Image3 from '../assets/Anu3.jpg';
 
 const PhotoGallery = () => {
-  const [rotate, setRotate] = useState(false);
+  const [selectedIndex, setSelectedIndex] = useState(null);
 
-  const handleClick = () => {
-    setRotate(!rotate);
+  const handleClick = (index) => {
+    setSelectedIndex(index === selectedIndex ? null : index);
   };
 
   const photos = [Image1, Image2, Image3];
@@ -24,16 +24,16 @@ const PhotoGallery = () => {
         {photos.map((photo, index) => (
           <motion.div
             key={index}
-            onClick={handleClick}
+            onClick={() => handleClick(index)}
             whileHover={{ scale: 1.25 }}
-            animate={{ rotateY: rotate ? 360 : 0 }}
+            animate={{ rotateY: selectedIndex === index ? 360 : 0 }}
             transition={{ duration: 1 }}
             className="relative cursor-pointer"
           >
             <img
               src={photo}
               alt={`Gallery ${index}`}
-              className="w-full h-[300px] md:h-[300px] lg:h-[300px]  rounded-lg"
+              className="w-full h-[400px] md:h-[300px] lg:h-[300px] object-cover rounded-lg"
             />
           </motion.div>
         ))}

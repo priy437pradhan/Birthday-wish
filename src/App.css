@@ -24,7 +24,7 @@
 
 /* Custom scrollbar for WebKit browsers (Chrome, Safari) */
 ::-webkit-scrollbar {
-  width: 12px; /* Scrollbar width */
+  width: 0px; /* Scrollbar width */
 }
 
 ::-webkit-scrollbar-track {

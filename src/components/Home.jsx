@@ -24,7 +24,7 @@ const Home = () => (
           whileTap={{ scale: 0.9 }}
           className="bg-white text-purple-500 px-6 py-3 rounded-lg shadow-lg hover:bg-gray-200 m-5 transition"
         >
-          See Wishes
+          See My Wish❤️ 
         </motion.button>
       </Link>
     <div className='m-4'>
