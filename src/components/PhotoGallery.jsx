@@ -33,7 +33,7 @@ const PhotoGallery = () => {
             <img
               src={photo}
               alt={`Gallery ${index}`}
-              className="w-full h-40 object-cover rounded-lg"
+              className="w-full h-auto object-cover rounded-lg"
             />
           </motion.div>
         ))}
