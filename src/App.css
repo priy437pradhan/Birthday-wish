@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes shimmer {
+  0% { background-position: -1000px 0; }
+  100% { background-position: 1000px 0; }
+}
+
+.bg-shimmer {
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 25%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.1) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+/* h1{
+    color:brown
+} */
+ /* Custom scrollbar for Firefox */
+* {
+  scrollbar-width: thin; /* Thin scrollbar */
+  scrollbar-color: #888 #f1f1f1; /* Scrollbar thumb and track color */
+}
+
+/* Custom scrollbar for WebKit browsers (Chrome, Safari) */
+::-webkit-scrollbar {
+  width: 12px; /* Scrollbar width */
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Track color */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888; /* Thumb color */
+  border-radius: 6px; /* Rounded corners */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Thumb color on hover */
+}
+/* Prevent horizontal scrolling */
+html, body {
+  overflow-x: hidden; /* Hide horizontal scrollbar */
+  margin: 0; /* Remove default margin */
+}
+
+/* Ensure elements fit within the viewport */
+.container {
+  max-width: 100vw; /* Ensure container does not exceed viewport width */
+  overflow-x: hidden; /* Prevent horizontal overflow */
+}
+.perspective-container {
+  perspective: 1000px; /* Adjust for depth of the effect */
+}
+
+.perspective {
+  display: flex;
+  flex-wrap: wrap;
+  perspective: inherit;
+  justify-content: center;
+}
