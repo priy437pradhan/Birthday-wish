@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 const CountdownTimer = () => {
   const calculateTimeLeft = () => {
-    const eventDate = new Date("2024-09-02T00:00:00"); 
+    const eventDate = new Date("2024-09-09T00:00:00"); 
     const now = new Date();
     const timeLeft = eventDate - now;
 
@@ -43,7 +43,7 @@ const CountdownTimer = () => {
         transition={{ duration: 1 }}
         className="text-4xl font-bold mb-4"
       >
-        {timeLeft.isOver ? "Happy Birthday to You Aun Bhauja!❤️" : "Countdown to Your Special Day!"}
+        {timeLeft.isOver ? "Happy Birthday to You Pragyan!🤗" : "Countdown to Your Special Day!"}
       </motion.h2>
       <div className="text-2xl mb-4">
         {!timeLeft.isOver && (
@@ -65,7 +65,7 @@ const CountdownTimer = () => {
             transition={{ duration: 1, type: 'spring', stiffness: 100 }}
             className="text-4xl font-extrabold mb-4"
           >
-            ❤️Your Special Day is Here!❤️
+            Your Special Day is Here!🤗
           </motion.h1>
         )}
       </div>

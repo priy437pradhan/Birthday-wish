@@ -1,8 +1,11 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
-import Image1 from '../assets/Anu2.jpg';
-import Image2 from '../assets/Anu1.jpg';
-import Image3 from '../assets/Anu3.jpg';
+import Image1 from '../assets/prag.jpeg';
+import Image2 from '../assets/prag2.jpeg';
+import Image3 from '../assets/prag3.jpeg';
+import Image4 from '../assets/prag4.jpeg';
+import Image5 from '../assets/prag5.jpeg';
+import Image6 from '../assets/prag6.jpeg';
 
 const PhotoGallery = () => {
   const [selectedIndex, setSelectedIndex] = useState(null);
@@ -11,7 +14,7 @@ const PhotoGallery = () => {
     setSelectedIndex(index === selectedIndex ? null : index);
   };
 
-  const photos = [Image1, Image2, Image3];
+  const photos = [Image1, Image2, Image3, Image4, Image5, Image6];
 
   return (
     <div className="perspective-container">

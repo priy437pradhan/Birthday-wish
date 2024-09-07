@@ -20,7 +20,7 @@ const Wishes = () => {
         <h2 className="text-5xl font-bold mb-6">Lots of LOVE  ❤️</h2>
         <p className="text-lg mb-6">May your day be filled with joy, love, and laughter!</p>
         <p className="text-lg mb-6">
-          To the person I love so much, your care and affection mean the world to me. You not only bring joy to my life but also to my family, especially my brother. Your kindness and love are truly cherished.
+        Wishing you a beautiful day with good health and happiness forever. Happiest Birthday Pragyan ! Stay blessed & Always keep smiling... I wish for all of your wishes to come true.
         </p>
         <Link to="/">
           <motion.button
